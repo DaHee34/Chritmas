@@ -1,0 +1,118 @@
+body {
+  background: #0b1d26;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+h1 {
+  margin: 20px 0;
+  color: gold;
+  text-shadow: 0 0 15px red;
+}
+
+.tree {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ⭐ Ngôi sao */
+.star {
+  font-size: 30px;
+  margin-bottom: 5px;
+  animation: twinkle 1s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { transform: scale(1); opacity: 0.6; }
+  to   { transform: scale(1.2); opacity: 1; }
+}
+
+/* Tầng cây */
+.layer {
+  height: 26px;
+  margin: 5px 0;
+  background: #0f7d1e;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Cây to ngang */
+.layer:nth-child(2)  { width: 80px; }
+.layer:nth-child(3)  { width: 110px; }
+.layer:nth-child(4)  { width: 140px; }
+.layer:nth-child(5)  { width: 170px; }
+.layer:nth-child(6)  { width: 200px; }
+.layer:nth-child(7)  { width: 230px; }
+.layer:nth-child(8)  { width: 260px; }
+.layer:nth-child(9)  { width: 290px; }
+.layer:nth-child(10) { width: 320px; }
+.layer:nth-child(11) { width: 350px; }
+
+/* Đèn */
+.light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: red;
+}
+
+/* Thân cây */
+.trunk {
+  width: 50px;
+  height: 60px;
+  background: #8b2e2e;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+/* Quà */
+.gifts {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+.gift { width: 35px; height: 35px; border-radius: 6px; }
+.gift.red { background: crimson; }
+.gift.yellow { background: gold; }
+.gift.blue { background: royalblue; }
+
+
+
+
+/* Nút nhạc */
+#musicBtn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  color: white;
+  user-select: none;
+  opacity: 0.8;
+  animation-name: fall;
+  animation-timing-function: linear;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
